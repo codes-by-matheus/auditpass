@@ -25,9 +25,10 @@ def verificar_vazamento(senha):
 
 
 if __name__ == "__main__":
-    vazamentos_123456 = verificar_vazamento("123456")
-    print(f"A senha '123456' vazou: {vazamentos_123456:,} vezes!")
-
-    senha_segura = "M@th3us#AuditPass_2026_Ultra"
-    vazamentos_segura = verificar_vazamento(senha_segura)
-    print(f"A senha '{senha_segura}' vazou: {vazamentos_segura} vezes!")
+    senha_digitada = input("Digite uma senha para testar: ")
+    qtd_vazamentos = verificar_vazamento(senha_digitada)
+    
+    if qtd_vazamentos > 0:
+        print(f"🚨 PERIGO! Essa senha já apareceu {qtd_vazamentos:,} vezes em vazamentos!")
+    else:
+        print("✅ SEGURA! Essa senha nunca foi encontrada em nenhum vazamento conhecido.")
