@@ -5,8 +5,10 @@ def avaliar_forca(senha):
     feedback = []
     if len(senha) >= 8:
         pontos += 1
-        if len (senha) >= 12:
+        if len(senha) >= 12:
             pontos += 1
+        else:
+            feedback.append("Recomendado: use 12 ou mais caracteres para segurança máxima.")
     else:
         feedback.append("A senha deve conter pelo menos 8 caracteres.")
     
